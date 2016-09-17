@@ -18,7 +18,7 @@ class DNSf
       time = Time.new
       if time.hour.between?(0, 18) || time.hour.between?(21, 23)
         match(/youtube/, IN::A) do |transaction|
-          transaction.respond!("127.0.0.1")
+          transaction.respond!("127.0.0.1", {ttl: 300 })
         end
       end
       otherwise do |transaction|
