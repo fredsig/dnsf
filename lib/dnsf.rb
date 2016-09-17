@@ -21,7 +21,7 @@ class DNSf
           transaction.respond!("127.0.0.1", {ttl: 300 })
         end
 
-        match (/googlevideo\.com/, IN::A) do |transaction|
+        match(/googlevideo\.com/, IN::A) do |transaction|
           transaction.respond!("127.0.0.1", {ttl: 300 })
         end
       end
